@@ -1,9 +1,36 @@
 import React from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+
+const PageOne = () => {
+    return (
+        <div>
+            Page One
+            <Link to="/pagetwo">Navigate to Page Two</Link>
+        </div>
+    );
+};
+
+const PageTwo = () => {
+    return (
+        <div>
+            Page Two
+            <button>
+                Click me!
+            </button>
+            <Link to="/">Navigate to Page One</Link>
+        </div>
+    );
+};
 
 const App = () => {
     return (
         <div>
-            App
+            <BrowserRouter>
+                <div>
+                    <Route path="/" exact component={PageOne} />
+                    <Route path="/pagetwo" component={PageTwo} />
+                </div>
+            </BrowserRouter>
         </div>
     );
 };
