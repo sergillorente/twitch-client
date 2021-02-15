@@ -6,6 +6,11 @@ class StreamEdit extends React.Component {
     componentDidMount() {
         this.props.fetchStream(this.props.match.params.id);
     }
+
+    onSubmit = (formValues) =>{
+        console.log(formValues);
+    };
+
     render() {
         if (!this.props.stream) {
             return <div>Loading...</div>;
