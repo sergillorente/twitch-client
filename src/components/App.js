@@ -28,5 +28,3 @@ const App = () => {
 };
 
 export default App;
-
-// const NodeMediaServer = require('node-media-server');
